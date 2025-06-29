@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?><sqlb_project><db path="1 a muchos.db" readonly="0" foreign_keys="1" case_sensitive_like="0" temp_store="0" wal_autocheckpoint="1000" synchronous="2"/><attached/><window><main_tabs open="structure browser pragmas query" current="3"/></window><tab_structure><column_width id="0" width="300"/><column_width id="1" width="0"/><column_width id="2" width="100"/><column_width id="3" width="954"/><column_width id="4" width="0"/><expanded_item id="0" parent="1"/><expanded_item id="1" parent="1"/><expanded_item id="2" parent="1"/><expanded_item id="3" parent="1"/></tab_structure><tab_browse><table title="Propietario" custom_title="0" dock_id="1" table="4,11:mainPropietario"/><dock_state state="000000ff00000000fd00000001000000020000000000000000fc0100000001fb000000160064006f0063006b00420072006f00770073006500310100000000ffffffff0000011e00ffffff000000000000000000000004000000040000000800000008fc00000000"/><default_encoding codec=""/><browse_table_settings/></tab_browse><tab_sql><sql name="SQL 1*">Insert into propietario (Id, nombre, calle, ciudad) values
+(1, 'Juan Perez', 'Calle 123', 'Buenos Aires');
+
+Insert into propietario (Id, nombre, calle, ciudad) values
+(2, 'Maria Rodriguez', 'Calle 456', 'Lima');
+
+Insert into propietario (Id, nombre, calle, ciudad) values
+(3, 'Carlos Lopez', 'Calle 789', 'Santiago');
+
+Insert into propietario (Id, nombre, calle, ciudad) values
+(4, 'Ana Garcia', 'Calle 901', 'Bogotá');
+
+Insert into propietario (Id, nombre, calle, ciudad) values
+(5, 'Pedro Martinez', 'Calle 234', 'Quito');
+
+Insert into vehiculos (Id, marca, modelo, año, patente, Id_propietario(pk))
+values
+(1, 'Toyota', 'Corolla', 2015, 'ABC123', 1);
+
+Insert into vehiculos (Id, marca, modelo, año, patente, Id_propietario(pk))
+values
+(2, 'Ford', 'Ecos', 2018, 'DEF456', 1);
+
+Insert into vehiculos (Id, marca, modelo, año, patente, Id_propietario(pk))
+values
+(3, 'Honda', 'Civic', 2012, 'GHI789', 2);
+
+Insert into vehiculos (Id, marca, modelo, año, patente, Id_propietario(pk))
+values
+(4, 'Nissan', 'Sentra', 2016, 'MNO345', 2);
+
+SELECT propietario.nombre, propietario.apellido,
+       vehiculo.marca, vehiculo.modelo, vehiculo.año, vehiculo.patente
+FROM propietario
+INNER JOIN vehiculo ON propietario.id = vehiculo.id_propietario;</sql><current_tab id="0"/></tab_sql></sqlb_project>
